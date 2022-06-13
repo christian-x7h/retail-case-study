@@ -17,7 +17,7 @@ ext {
 
 dependencies {
 
-    implementation 'org.json:json:20220320'
+    implementation 'io.vertx:vertx-core:4.3.1' // For access to its convenient JSON lib (I should cut it up into its own lib one day...)
     implementation 'com.google.guava:guava:30.1.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
