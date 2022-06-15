@@ -2,26 +2,29 @@ package app.retail.manager.impl;
 
 import app.retail.app.ApplicationException;
 import app.retail.manager.ProductManager;
+import app.retail.model.CurrencyCode;
+import app.retail.model.Product;
 import app.retail.model.db.PriceData;
 import app.retail.service.NameService;
-import org.apache.commons.lang3.NotImplementedException;
+import app.retail.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
-import app.retail.model.CurrencyCode;
-import app.retail.model.Product;
-import app.retail.service.PriceService;
 
 import java.math.BigDecimal;
 
 @Service
 public class DefaultProductManager implements ProductManager {
 
-    @Autowired
     private NameService nameService;
-    @Autowired
     private PriceService priceService;
+
+    @Autowired
+    public DefaultProductManager(NameService nameService, PriceService priceService) {
+        this.nameService = nameService;
+        this.priceService = priceService;
+    }
 
     @Override
     public Mono<Product> getProduct(Long id, CurrencyCode currencyCode) {

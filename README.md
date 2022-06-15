@@ -10,7 +10,13 @@ Add an `application-prod.properties` to resources folder and override
 sample values from `dev` with actual credentials for an Azure Cosmos
 datastore.
 
-## Run the application
+## Run tests
+
+From project root, run:
+
+`./gradlew test`
+
+## Run the application locally
 
 From project root, run:
 
