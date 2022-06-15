@@ -39,7 +39,6 @@ curl -v 'http://localhost:8080/v1/products/13860428'
 ```
 
 ## TODOs
-* Test suite
 * Add currency to API get
 * Auto-convert other currency to requested currency
 * Validation for Enums
